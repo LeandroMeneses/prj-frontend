@@ -1,21 +1,13 @@
-// request via JavaScript ajax 4 passos
-// 01 criar a váriavel
 xhttp = new XMLHttpRequest();
 var lista;
-// var api = "https://qua-209050.herokuapp.com/api/usuario/";
 var api = "https://prj-java-senai.herokuapp.com/api/produto/";
 
 function listar() {
-    // 02 definição do nosso request (forma e endereço)
     xhttp.open("GET", api);
-    // 03 manda de fato a request
     xhttp.send();
-    // 04 execução quando tiver a devolutiva do request
     xhttp.onload = function () {
         lista = this.responseText;
-        // console.log(lista);
         lista = JSON.parse(lista);
-        // console.log(lista);
         texto = "";
         i = 0;
         for (const p of lista) {
@@ -35,7 +27,7 @@ function editar(i) {
 }
 
 function gravar() {
-    //alert("Estamos dentro da function incluir");
+
     var produto = {};
     produto.Nproduto = document.getElementById("Nproduto").value;
     produto.descricao = document.getElementById("descricao").value;
