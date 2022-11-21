@@ -18,11 +18,15 @@
         <label for="descricao">Descrição:</label>
         <input type="text" id="descricao" class="form-control" placeholder="Dê uma descrição para o produto">
         <label for="valor">Valor:</label>
+
         <input type="number" id="valor" class="form-control" step="0.01" name="quantity" min="0.01" placeholder="Digite o valor do produto">
+            
+
+
         <br>
-        <input type="button" value="Gravar" onclick="gravar()" class="btn btn-primary">
-        <input type="button" value="Novo" onclick="limpar()" class="btn btn-light">
-        <input type="button" value="Apagar" onclick="apagar()" class="btn btn-danger">
+        <input type="button" value="Gravar" onclick="gravar()" class="btn btn-outline-primary">
+        <input type="button" value="Novo" onclick="limpar()" class="btn btn-outline-success">
+        <input type="button" value="Apagar" onclick="apagar()" class="btn btn-outline-danger">
         <h4>Lista de produtos</h4>
         <table class="table table-hover">
             <thead>
