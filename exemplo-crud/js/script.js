@@ -11,7 +11,7 @@ function listar() {
         texto = "";
         i = 0;
         for (const p of lista) {
-            texto += `<tr onclick='editar(${i})'><td>${p.Nproduto}</td><td>${p.descricao}</td><td>${p.valor}</td></tr>`;
+            texto += `<tr onclick='editar(${i})'><td>${p.nproduto}</td><td>${p.descricao}</td><td>${p.valor}</td></tr>`;
             i++;
         }
         document.getElementById('lista').innerHTML = texto;
@@ -20,7 +20,7 @@ function listar() {
 
 function editar(i) {
     p = lista[i];
-    document.getElementById("Nproduto").value = p.Nproduto;
+    document.getElementById("Nproduto").value = p.nproduto;
     document.getElementById("descricao").value = p.descricao;
     document.getElementById("valor").value = p.valor;
     document.getElementById("id").value = p.id;
@@ -29,7 +29,7 @@ function editar(i) {
 function gravar() {
 
     var produto = {};
-    produto.Nproduto = document.getElementById("Nproduto").value;
+    produto.nproduto = document.getElementById("Nproduto").value;
     produto.descricao = document.getElementById("descricao").value;
     produto.valor = document.getElementById("valor").value;
     // console.log(produto);
