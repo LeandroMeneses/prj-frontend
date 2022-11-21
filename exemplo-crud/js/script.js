@@ -19,7 +19,7 @@ function listar() {
         texto = "";
         i = 0;
         for (const p of lista) {
-            texto += `<tr onclick='editar(${i})'><td>${p.Nproduto}</td><td>${p.descricao}</td><td>${p.valor}</td></tr>`;
+            texto += `<tr onclick='editar(${i})'><td>${p.Nome}</td><td>${p.descricao}</td><td>${p.valor}</td></tr>`;
             i++;
         }
         document.getElementById('lista').innerHTML = texto;
@@ -28,7 +28,7 @@ function listar() {
 
 function editar(i) {
     p = lista[i];
-    document.getElementById("Nproduto").value = p.Nproduto;
+    document.getElementById("Nome").value = p.Nome;
     document.getElementById("descricao").value = p.descricao;
     document.getElementById("valor").value = p.valor;
     document.getElementById("id").value = p.id;
@@ -37,7 +37,7 @@ function editar(i) {
 function gravar() {
     //alert("Estamos dentro da function incluir");
     var produto = {};
-    produto.Nproduto = document.getElementById("Nproduto").value;
+    produto.Nome = document.getElementById("Nome").value;
     produto.descricao = document.getElementById("descricao").value;
     produto.valor = document.getElementById("valor").value;
     // console.log(produto);
@@ -60,7 +60,7 @@ function gravar() {
 }
 
 function limpar() {
-    document.getElementById("Nproduto").value = "";
+    document.getElementById("Nome").value = "";
     document.getElementById("descricao").value = "";
     document.getElementById("valor").value = "";
     document.getElementById("id").value = "";
