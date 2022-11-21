@@ -18,8 +18,8 @@ function listar() {
         // console.log(lista);
         texto = "";
         i = 0;
-        for (const u of lista) {
-            texto += `<tr onclick='editar(${i})'><td>${u.nome}</td><td>${u.email}</td></tr>`;
+        for (const p of lista) {
+            texto += `<tr onclick='editar(${i})'><td>${p.Nproduto}</td><td>${p.descricao}</td><td>${p.valor}</td></tr>`;
             i++;
         }
         document.getElementById('lista').innerHTML = texto;
@@ -27,21 +27,23 @@ function listar() {
 }
 
 function editar(i) {
-    u = lista[i];
-    document.getElementById("nome").value = u.nome;
-    document.getElementById("email").value = u.email;
-    document.getElementById("id").value = u.id;
+    p = lista[i];
+    document.getElementById("Nproduto").value = p.Nproduto;
+    document.getElementById("descricao").value = p.descricao;
+    document.getElementById("valor").value = p.valor;
+    document.getElementById("id").value = p.id;
 }
 
 function gravar() {
     //alert("Estamos dentro da function incluir");
-    var usuario = {};
-    usuario.nome = document.getElementById("nome").value;
-    usuario.email = document.getElementById("email").value;
-    // console.log(usuario);
+    var produto = {};
+    produto.Nproduto = document.getElementById("Nproduto").value;
+    produto.descricao = document.getElementById("descricao").value;
+    produto.valor = document.getElementById("valor").value;
+    // console.log(produto);
 
-    usuario.id = document.getElementById("id").value;
-    if (usuario.id > 0) {
+    produto.id = document.getElementById("id").value;
+    if (produto.id > 0) {
         acao = "PUT"; // alteração
     } else {
         acao = "POST"; // incluir
@@ -49,7 +51,7 @@ function gravar() {
 
     xhttp.open(acao, api);
     xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    xhttp.send(JSON.stringify(usuario));
+    xhttp.send(JSON.stringify(produto));
     xhttp.onload = function () {
         // console.log(this.responseText);
         listar();
@@ -58,8 +60,9 @@ function gravar() {
 }
 
 function limpar() {
-    document.getElementById("nome").value = "";
-    document.getElementById("email").value = "";
+    document.getElementById("Nproduto").value = "";
+    document.getElementById("descricao").value = "";
+    document.getElementById("valor").value = "";
     document.getElementById("id").value = "";
 }
 
