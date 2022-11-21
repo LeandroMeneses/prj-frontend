@@ -20,7 +20,7 @@ function listar() {
 
 function editar(i) {
     p = lista[i];
-    document.getElementById("Nproduto").value = p.nproduto;
+    document.getElementById("nproduto").value = p.nproduto;
     document.getElementById("descricao").value = p.descricao;
     document.getElementById("valor").value = p.valor;
     document.getElementById("id").value = p.id;
@@ -29,7 +29,7 @@ function editar(i) {
 function gravar() {
 
     var produto = {};
-    produto.nproduto = document.getElementById("Nproduto").value;
+    produto.nproduto = document.getElementById("nproduto").value;
     produto.descricao = document.getElementById("descricao").value;
     produto.valor = document.getElementById("valor").value;
     // console.log(produto);
@@ -52,7 +52,7 @@ function gravar() {
 }
 
 function limpar() {
-    document.getElementById("Nproduto").value = "";
+    document.getElementById("nproduto").value = "";
     document.getElementById("descricao").value = "";
     document.getElementById("valor").value = "";
     document.getElementById("id").value = "";
